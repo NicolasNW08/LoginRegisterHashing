@@ -17,7 +17,7 @@ Realizado con la finalidad de **aprender más** sobre la *seguridad de las contr
 
 Es una única **GUI** hecha en **Tkinter** para el login y el registro que contiene un Entry de Usuario y Contraseña, y botones de Iniciar Sesión y Registrarse.
 
-![alt text](asd/1.png)
+![alt text](README/1.png)
 
 ## 📁 Base de Datos
 
@@ -27,13 +27,13 @@ Es una conexión a una base de datos **muy simple** para este ejemplo de *Login*
 ### ❗ La columna de contraseñas está guardada como BLOB ❗
 > Esto significa que la base de datos **no guarda las contraseñas en texto plano**, sino que las **almacena en un formato especial llamado BLOB** *(Binary Large Object)*, que **es una secuencia de bytes**.
 
-![alt text](asd/2.png)
+![alt text](README/2.png)
 
 ## 📁 Login y Register
 
 Se comprueba que estén todos los campos rellenos y se aplica el **método de Hashing** a la contraseña.
 
-![alt text](asd/3.png)
+![alt text](README/3.png)
 
 ### Sobre bcrypt
 
@@ -49,7 +49,7 @@ Se comprueba que estén todos los campos rellenos y se aplica el **método de Ha
 2️⃣ Se aplica el algoritmo de *hashing*, agregando un **salt**.  
 > El **salt** es un **valor aleatorio** que se agrega a la contraseña antes de ser hasheada, con la finalidad de que el **hash sea único**, *incluso si hay dos usuarios con la misma contraseña*.
 
-![alt text](asd/4.png)
+![alt text](README/4.png)
 
 ##### 🔍 Ejemplo sin salt (inseguro):
 
@@ -79,14 +79,14 @@ Ahora, si generamos un **salt aleatorio** para cada usuario:
 
 3️⃣ Se ingresa el hash a la base de datos.
 
-![alt text](asd/5.png)
+![alt text](README/5.png)
 
 #### 🔑 Verificación / Iniciar Sesión
 
 1️⃣ Se obtiene el valor de la contraseña a través de la búsqueda del usuario.  
 2️⃣ Se verifica que la contraseña ingresada sea igual al hash almacenado en la base de datos, utilizando `bcrypt.checkpw()` y `.encode()`.  
 
-![alt text](asd/6.png)
+![alt text](README/6.png)
 
 > **bcrypt.checkpw()** recupera la contraseña hasheada en la base de datos y la **compara** con la contraseña ingresada.  
 > **bcrypt.encode()** convierte la contraseña a **bytes** para compararla con el hash almacenado en la base de datos.  
@@ -96,7 +96,7 @@ Ahora, si generamos un **salt aleatorio** para cada usuario:
 
 3️⃣ Una vez comprobado que la contraseña ingresada es igual al hash almacenado en la base de datos, la condicional hace su trabajo.
 
-![alt text](7.png)
+![alt text](README/7.png)
 
 # 📌 Conclusiones
 
